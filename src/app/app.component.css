@@ -11,19 +11,25 @@ main{
 .wrapper
 {
     display: flex;
+    height: 60vh;
+
 }
 
-.left,
+.left
+{
+    width: 30%;
+}
 .right {
-    width: 50%;
+    width: 70%;
 }
 
 #Person-Chat
 {
     float: left;
     width: 40%;
-    margin-left: 5vw;
     transform: scaleX(-1);
+    margin-left: 2vw;
+
 }
 
 
