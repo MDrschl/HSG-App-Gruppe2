@@ -8,6 +8,10 @@ main{
     margin-bottom: 2vh;
 }
 
+.main-wrapper{
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+}
 .wrapper
 {
     display: flex;
