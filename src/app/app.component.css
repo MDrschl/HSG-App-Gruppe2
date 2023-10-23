@@ -12,11 +12,9 @@ main{
     padding-left: 7.5vw;
     padding-right: 7.5vw;
 }
-.wrapper
-{
+.wrapper{
     display: flex;
     height: 60vh;
-
 }
 
 .left
