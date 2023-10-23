@@ -15,5 +15,6 @@ nav
 #hsg-logo
 {
     height: inherit;
-    padding: 1em;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
