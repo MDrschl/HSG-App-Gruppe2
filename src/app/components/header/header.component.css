@@ -6,8 +6,8 @@ nav
     padding-left: 7.5vw;
     padding-right: 7.5vw;
 }
-
-#logo
+/*eigenes Logo*/
+#logo 
 {
     height: inherit;
 }
