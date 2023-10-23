@@ -1,0 +1,9 @@
+<textarea rows="2" 
+[(ngModel)]="chatMessage" 
+(keyup.enter)="addMessage(chatMessage)"
+placeholder="type here..."
+class="form-control"
+></textarea> 
+<button (click)="addMessage(chatMessage)" [disabled]="chatMessage === ''" class="btn btn-primary">send</button>
+
+<div>{{chatMessage}}</div>
