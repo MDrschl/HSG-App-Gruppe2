@@ -9,3 +9,9 @@ nav
 {
     height: inherit;
 }
+
+#hsg-logo
+{
+    height: inherit;
+    padding: 1em;
+}
