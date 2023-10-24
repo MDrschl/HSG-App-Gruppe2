@@ -1,3 +1,4 @@
+
 h1, h2, h3, h4, h5, h6{
     font-weight: bold;
     color: #434343;
@@ -6,6 +7,11 @@ h1, h2, h3, h4, h5, h6{
 main{
     margin-top: 2vh;
     margin-bottom: 2vh;
+}
+
+.icon{
+    height: 100%;
+    width: auto;
 }
 
 .main-wrapper{
@@ -23,21 +29,29 @@ main{
 }
 .right {
     width: 70%;
+    /* max-height: 100%; */
 }
 
 #Person-Chat
 {
-    float: left;
-    width: 40%;
+    /* float: left; */
+    /* width: 40%; */
+    max-width: 90%;
+    max-height: 80%;
     transform: scaleX(-1);
-    margin-left: 2vw;
-    margin-top: 10vh;
+    /* margin-left: 2vw; */
+    /* margin-top: 10vh; */
 }
 
+/* Mediaquery */
 
-.chat{
-    width: 90%;
-    height: 70%;
-    border: 1px solid #707070;
-    border-radius: 20px;
-}
+@media only screen and (max-width: 600px) {
+    .left {
+        display: none;
+    }
+    .right {
+        width: 100%;
+    }
+
+
+  }

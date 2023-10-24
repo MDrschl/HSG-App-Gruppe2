@@ -1,0 +1,51 @@
+.chat
+{
+    border-radius: 20px;
+    margin-bottom: 1vh;
+}
+
+#chat-textarea{
+    border-radius: 30px;
+    margin-right: 1vw;
+    line-height: 2.1;
+    vertical-align: middle;
+    resize: none;
+}
+
+#div-btn-send{
+    height: 100%;
+    border: none !important;
+}
+#btn-send{
+    border-radius: 100vw;
+    height: 50px;
+    width: 50px;
+    background-color: #00802f;
+    border: none !important;
+}
+
+.border{
+    border-radius: 20px;
+}
+
+.chat{
+    height: 70%;
+    border: 1px solid #707070;
+    padding-left: 2.5vw;
+    padding-right: 5vw;
+    padding-top: 2.5vh;
+}
+
+/*Text, welche in dem Chatbereich landet*/
+.chat-input-text{
+    width: fit-content;
+    padding-right: 5%; /* nicht ideal */
+    padding-left: 2%;
+    color: white;
+    background-color: #00802f;
+    border: none !important;
+}
+
+.chat-input{
+    display: flex;
+}

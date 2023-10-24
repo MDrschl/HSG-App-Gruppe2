@@ -1,10 +1,14 @@
 nav
 {
     height: 10vh;
-    border-bottom: 1px solid #707070;
+    /* border-bottom: 1px solid #707070; */
     padding: 0;
     padding-left: 7.5vw;
     padding-right: 7.5vw;
+    padding-top: 1vh;
+    margin-bottom: 10vh;
+    display: flex;
+    justify-content: space-between;
 }
 /*eigenes Logo*/
 #logo 
@@ -17,4 +21,14 @@ nav
     height: inherit;
     padding-top: 1vh;
     padding-bottom: 1vh;
+}
+
+@media only screen and (max-width: 600px) {
+    nav{
+        margin: 0
+    }
+    .logo{
+        width: 40% !important;
+        height: auto;
+    }
 }

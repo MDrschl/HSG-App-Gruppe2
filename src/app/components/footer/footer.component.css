@@ -13,6 +13,25 @@ footer a{
     color: white;
 }
 
+
 .footer-wrapper a:nth-child(2n) {
     margin-left: 5vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer-wrapper{
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+
+    }
+    footer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+
+
 }

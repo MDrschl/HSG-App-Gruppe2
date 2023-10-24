@@ -1,9 +1,16 @@
-<textarea rows="2" 
-[(ngModel)]="chatMessage" 
-(keyup.enter)="addMessage(chatMessage)"
-placeholder="type here..."
-class="form-control"
-></textarea> 
-<button (click)="addMessage(chatMessage)" [disabled]="chatMessage === ''" class="btn btn-primary">send</button>
+<div class="chat border">
+    <div class="chat-input-text border">{{chatMessage}}</div>
+</div>
 
-<div>{{chatMessage}}</div>
+<div class="chat-input">
+    <textarea class="form-control border" id="chat-textarea"
+        rows="1" 
+        [(ngModel)]="chatMessage" 
+        (keyup.enter)="addMessage(chatMessage)"
+        placeholder="Schreibe eine Nachricht :)"
+    ></textarea>
+    <div id="div-btn-send">
+        <button (click)="addMessage(chatMessage)" [disabled]="chatMessage === ''" class="btn btn-primary border" id="btn-send"><img class="icon" src="../../../assets/Images/send-icon.svg"></button>
+    </div>
+</div>
+
