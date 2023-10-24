@@ -6,6 +6,8 @@ footer{
     color: white;
     display: flex;
     align-items: center;
+    position: relative;
+    top: 40px;
 }
 
 footer a{
