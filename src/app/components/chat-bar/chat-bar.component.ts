@@ -9,11 +9,14 @@ export class ChatBarComponent {
   public chatMessage = '' ;
 
   public addMessage(message: string): void{
-    console.log(message);
-    alert(message);
+
 
     if (message.trim() === ''){
       return;
+    }
+    else{
+      console.log(message);
+      alert(message);
     }
   }
 }
