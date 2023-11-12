@@ -9,8 +9,6 @@ export class ChatBarComponent {
   public chatMessage = '' ;
 
   public addMessage(message: string): void{
-
-
     if (message.trim() === ''){
       return;
     }
