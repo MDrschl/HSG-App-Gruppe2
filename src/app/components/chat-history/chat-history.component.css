@@ -7,12 +7,17 @@
     border-radius: 10px;
     padding: 10px;
     align-self: flex-end;
+    margin-left: 100px;
+    position: relative;
   }
   
-.message-timestamp {
-    font-size: 0.8em;
+  .message-timestamp {
+    font-size: 0.7em;
     color: #ffffff;
-  }
+    position: absolute; /* Füge dies hinzu, um die Position absolut festzulegen */
+    bottom: 6px; /* Füge dies hinzu, um die Position nach unten zu verschieben */
+    right: 6px; /* Füge dies hinzu, um die Position nach rechts zu verschieben */
+}
   
 .message-content {
     margin-top: 4px;

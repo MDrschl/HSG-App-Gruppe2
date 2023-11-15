@@ -13,10 +13,10 @@
     line-height: 2.3;
     vertical-align: middle;
     resize: none;
-    position: fixed; /* Set the position to fixed */
-    bottom: 130px; /* Adjust as needed */
+    position: fixed;
+    bottom: 130px;
     width: calc(60% - 7.5vw);
-    display: inline-block; /* Adjust as needed */
+    display: inline-block;
   }
   
 
