@@ -7,13 +7,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatBarComponent } from './components/chat-bar/chat-bar.component';
 import { FormsModule } from '@angular/forms';
+import { ChatHistoryComponent } from './components/chat-history/chat-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ChatBarComponent
+    ChatBarComponent,
+    ChatHistoryComponent
   ],
   imports: [
     BrowserModule,

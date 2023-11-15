@@ -1,20 +1,31 @@
-.chat
-{
-    border-radius: 20px;
-    margin-bottom: 1vh;
-}
+.chat {
+    height: 70%;
+    border: 1px solid #707070;
+    padding-left: 2.5vw;
+    padding-right: 5vw;
+    padding-top: 2.5vh;
+    position: relative; /* Set the position to relative */
+  }
 
-#chat-textarea{
-    border-radius: 30px;
+  #chat-textarea {
+    border-radius: 15px;
     margin-right: 1vw;
-    line-height: 2.1;
+    line-height: 2.3;
     vertical-align: middle;
     resize: none;
-}
+    position: fixed; /* Set the position to fixed */
+    bottom: 130px; /* Adjust as needed */
+    width: calc(60% - 7.5vw);
+    display: inline-block; /* Adjust as needed */
+  }
+  
 
-#div-btn-send{
-    height: 100%;
+#div-btn-send {
     border: none !important;
+    position: absolute;
+    bottom: 130px;
+    right: 110px;
+    display: inline-block;
 }
 #btn-send{
     border-radius: 100vw;
@@ -26,24 +37,6 @@
 
 .border{
     border-radius: 20px;
-}
-
-.chat{
-    height: 70%;
-    border: 1px solid #707070;
-    padding-left: 2.5vw;
-    padding-right: 5vw;
-    padding-top: 2.5vh;
-}
-
-/*Text, welche in dem Chatbereich landet*/
-.chat-input-text{
-    width: fit-content;
-    padding-right: 5%; /* nicht ideal */
-    padding-left: 2%;
-    color: white;
-    background-color: #00802f;
-    border: none !important;
 }
 
 .chat-input{

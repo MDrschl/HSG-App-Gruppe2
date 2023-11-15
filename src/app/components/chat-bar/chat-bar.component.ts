@@ -1,20 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-chat-bar',
   templateUrl: './chat-bar.component.html',
-  styleUrls: ['./chat-bar.component.css']
+  styleUrls: ['./chat-bar.component.css'],
 })
 export class ChatBarComponent {
-  public chatMessage = '' ;
+  @Output() messageToSend = new EventEmitter<string>();
 
-  public addMessage(message: string): void{
-    if (message.trim() === ''){
+  public chatMessage = '';
+  public errorMessage = '';
+
+  public addMessage(message: string): void {
+    message = message.replace(/(\r\n|\r|\n)/, '');
+    message = message.trim();
+
+    if (!message) {
+      this.errorMessage = 'Bitte fügen Sie eine Nachricht hinzu!';
+      this.chatMessage = '';
+
       return;
     }
-    else{
-      console.log(message);
-      alert(message);
-    }
+
+    const timestamp = new Date().toLocaleString('de');
+    const messageToSend = `${timestamp} - ${message}<br>`;
+
+    this.messageToSend.emit(messageToSend);
+    this.chatMessage = '';
+    this.errorMessage = '';
   }
 }

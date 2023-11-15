@@ -1,6 +1,3 @@
-<div class="chat border">
-    <div class="chat-input-text border">{{chatMessage}}</div>
-</div>
 
 <div class="chat-input">
     <textarea class="form-control border" id="chat-textarea"
@@ -10,7 +7,11 @@
         placeholder="Schreibe eine Nachricht :)"
     ></textarea>
     <div id="div-btn-send">
-        <button (click)="addMessage(chatMessage)" [disabled]="chatMessage === ''" class="btn btn-primary border" id="btn-send"><img class="icon" src="../../../assets/Images/send-icon.svg"></button>
+        <button (click)="addMessage(chatMessage)"
+                [disabled]="chatMessage === ''"
+                class="btn btn-primary border"
+                id="btn-send">
+        <img class="icon" src="../../../assets/Images/send-icon.svg"></button>
     </div>
 </div>
-
+<div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>
