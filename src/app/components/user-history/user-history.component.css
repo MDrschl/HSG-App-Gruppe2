@@ -1,0 +1,11 @@
+.user-history {
+    position: fixed;
+    border: 1px solid #707070;
+    border-radius: 15px;
+    padding: 10px;
+    height: 400px;
+    width: 200px;
+    overflow-y: auto;
+    top: 210px;
+    left: 100px;
+}

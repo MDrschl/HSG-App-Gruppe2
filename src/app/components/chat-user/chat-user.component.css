@@ -1,0 +1,35 @@
+.user-form {
+    position: fixed;
+    left: 100px;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .user-label {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  #btn-user {
+    position: relative;
+    margin-left: 10px;
+    border-radius: 100vw;
+    height: 50px;
+    width: 50px;
+    background-color: #00802f;
+    border: none !important;
+  }
+#div-btn-user {
+    border: none !important;
+    position: relative;
+    display: inline-block;
+}
+
+#user-textarea {
+    line-height: 2.3;
+    vertical-align: middle;
+    resize: none;
+    position: relative;
+    display: inline-block;
+  }

@@ -1,10 +1,13 @@
-<div>
-    <label for="username">Benutzername anlegen </label>
-    <input class = "user-textarea" type="text" id="username" [(ngModel)]="username" />
-    <button (click)="createUser()"
-            id = 'create-user'
-            >
-            <img class="icon" src="../../../assets/Images/send-icon.svg">
+<div class="user-form">
+    <div id="user-textarea">
+      <input type="text" id="username" [(ngModel)]="username" placeholder="Benutzername anlegen"/>
+    </div>
+    <div id = "div-btn-user">
+    <button (click)="createUser()" class="btn" id="btn-user">
+      <img class="icon" src="../../../assets/Images/user-icon.svg" />
     </button>
+    </div>
   </div>
+  
   <div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>
+  

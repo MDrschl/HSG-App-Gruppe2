@@ -9,6 +9,7 @@ import { ChatBarComponent } from './components/chat-bar/chat-bar.component';
 import { FormsModule } from '@angular/forms';
 import { ChatHistoryComponent } from './components/chat-history/chat-history.component';
 import { ChatUserComponent } from './components/chat-user/chat-user.component';
+import { UserHistoryComponent } from './components/user-history/user-history.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ChatUserComponent } from './components/chat-user/chat-user.component';
     FooterComponent,
     ChatBarComponent,
     ChatHistoryComponent,
-    ChatUserComponent
+    ChatUserComponent,
+    UserHistoryComponent
   ],
   imports: [
     BrowserModule,

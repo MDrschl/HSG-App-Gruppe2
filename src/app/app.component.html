@@ -1,45 +1,27 @@
-<!-- app.component.html -->
 <div class="container">
-  <!-- Header -->
   <app-header></app-header>
 
   <div class="main-wrapper">
-    <!-- Content -->
-    <main>
-      <div class="wrapper">
-        <!-- BILD
-          <div class="left">
-            <img src="../../../assets/Images/Person-Chat_gruen.png" alt="Grafik" id="Person-Chat" />
-          </div>
-        -->
+    <main class="wrapper">
+      <div class="col">
+        <app-chat-user (userCreated)="userSubmitted($event)"></app-chat-user>
+      </div>
 
-        <div class="row">
-          <!-- Input bar for typing messages -->
-          <div class="col">
-            <app-chat-user (userCreated)="userCreated($event)"></app-chat-user>
-          </div>
+      <div class="col">
+        <app-user-history [userhistory]="userHistory"></app-user-history>
+      </div>
+
+      <div class="right">
+        <div class="col">
+          <app-chat-history [history]="messageHistory"></app-chat-history>
         </div>
 
-        <div class="right">
-          <!-- The right section -->
-          <div class="row">
-            <!-- Display message history -->
-            <div class="col">
-              <app-chat-history [history]="messageHistory"></app-chat-history>
-            </div>
-          </div>
-
-          <div class="row">
-            <!-- Input bar for typing messages -->
-            <div class="col">
-              <app-chat-bar (messageToSend)="messageSubmitted($event)"></app-chat-bar>
-            </div>
-          </div>
+        <div class="col">
+          <app-chat-bar (messageToSend)="messageSubmitted($event)"></app-chat-bar>
         </div>
       </div>
     </main>
   </div>
 
-  <!-- Footer -->
   <app-footer></app-footer>
 </div>
