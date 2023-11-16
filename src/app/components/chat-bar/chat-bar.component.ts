@@ -10,6 +10,7 @@ export class ChatBarComponent {
 
   public chatMessage = '';
   public errorMessage = '';
+  public disableInput = false;
 
   public addMessage(message: string): void {
     message = message.replace(/(\r\n|\r|\n)/, '');
@@ -17,9 +18,16 @@ export class ChatBarComponent {
 
     if (!message) {
       this.errorMessage = 'Bitte fügen Sie eine Nachricht hinzu!';
-      this.chatMessage = '';
-
       return;
+    }
+
+    if (message.length > 500) {
+      this.errorMessage = 'Warnung: Die Nachricht überschreitet 500 Zeichen!';
+      this.disableInput = true;
+      return;
+    } else {
+      this.errorMessage = '';
+      this.disableInput = false;
     }
 
     const timestamp = new Date().toLocaleString('de');
@@ -27,6 +35,10 @@ export class ChatBarComponent {
 
     this.messageToSend.emit(messageToSend);
     this.chatMessage = '';
+  }
+
+  public resetWarning(): void {
     this.errorMessage = '';
+    this.disableInput = false;
   }
 }

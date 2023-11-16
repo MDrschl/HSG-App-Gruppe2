@@ -7,7 +7,7 @@ import { Component, Input, ElementRef, ViewChild, AfterViewChecked } from '@angu
 })
 export class ChatHistoryComponent implements AfterViewChecked {
   @Input() history: string = '';
-@ViewChild('chatHistoryBox', { static: false }) private chatHistoryBox!: ElementRef;
+  @ViewChild('chatHistoryBox', { static: false }) private chatHistoryBox!: ElementRef;
 
   get messages(): Message[] {
     const messagesArray = this.history.split('<br>');
@@ -30,8 +30,6 @@ export class ChatHistoryComponent implements AfterViewChecked {
     }
   }
 }
-
-
 
 interface Message {
   timestamp: string;
