@@ -8,8 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ChatApp';
   messageHistory = '';
+  currentUser = '';
 
   public messageSubmitted(message: string): void {
     this.messageHistory += message;
+  }
+
+  public userCreated(usrename: string): void{
+    this.currentUser = usrename;
   }
 }

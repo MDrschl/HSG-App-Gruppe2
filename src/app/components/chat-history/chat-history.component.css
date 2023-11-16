@@ -27,5 +27,6 @@
     border-radius: 15px;
     padding: 10px;
     height: 450px;
+    width: 45vw;
     overflow-y: auto; /* Add this to enable vertical scrolling if the content exceeds the box height */
   }

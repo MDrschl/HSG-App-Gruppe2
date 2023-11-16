@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatBarComponent } from './components/chat-bar/chat-bar.component';
 import { FormsModule } from '@angular/forms';
 import { ChatHistoryComponent } from './components/chat-history/chat-history.component';
+import { ChatUserComponent } from './components/chat-user/chat-user.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ChatHistoryComponent } from './components/chat-history/chat-history.com
     HeaderComponent,
     FooterComponent,
     ChatBarComponent,
-    ChatHistoryComponent
+    ChatHistoryComponent,
+    ChatUserComponent
   ],
   imports: [
     BrowserModule,

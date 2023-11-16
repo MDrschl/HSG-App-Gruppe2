@@ -7,10 +7,20 @@
     <!-- Content -->
     <main>
       <div class="wrapper">
-        <div class="left">
-          <img src="../../../assets/Images/Person-Chat_gruen.png" alt="Grafik" id="Person-Chat" />
+        <!-- BILD
+          <div class="left">
+            <img src="../../../assets/Images/Person-Chat_gruen.png" alt="Grafik" id="Person-Chat" />
           </div>
-          <div class="right">
+        -->
+
+        <div class="row">
+          <!-- Input bar for typing messages -->
+          <div class="col">
+            <app-chat-user (userCreated)="userCreated($event)"></app-chat-user>
+          </div>
+        </div>
+
+        <div class="right">
           <!-- The right section -->
           <div class="row">
             <!-- Display message history -->
@@ -18,6 +28,7 @@
               <app-chat-history [history]="messageHistory"></app-chat-history>
             </div>
           </div>
+
           <div class="row">
             <!-- Input bar for typing messages -->
             <div class="col">

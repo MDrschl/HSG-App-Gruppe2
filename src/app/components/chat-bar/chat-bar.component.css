@@ -4,7 +4,7 @@
     padding-left: 2.5vw;
     padding-right: 5vw;
     padding-top: 2.5vh;
-    position: relative; /* Set the position to relative */
+    position: relative; 
   }
 
   #chat-textarea {
@@ -15,7 +15,7 @@
     resize: none;
     position: fixed;
     bottom: 130px;
-    width: calc(60% - 7.5vw);
+    width: 45vw;
     display: inline-block;
   }
   
