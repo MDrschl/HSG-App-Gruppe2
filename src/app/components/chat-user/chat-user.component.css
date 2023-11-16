@@ -32,4 +32,6 @@
     resize: none;
     position: relative;
     display: inline-block;
+    border-radius: 15px;
+    width: 200px;
   }

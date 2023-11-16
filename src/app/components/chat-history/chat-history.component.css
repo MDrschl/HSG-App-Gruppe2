@@ -14,9 +14,9 @@
   .message-timestamp {
     font-size: 0.7em;
     color: #ffffff;
-    position: absolute; /* Füge dies hinzu, um die Position absolut festzulegen */
-    bottom: 6px; /* Füge dies hinzu, um die Position nach unten zu verschieben */
-    right: 6px; /* Füge dies hinzu, um die Position nach rechts zu verschieben */
+    position: absolute; 
+    bottom: 6px;
+    right: 6px;
 }
   
 .message-content {
@@ -28,5 +28,5 @@
     padding: 10px;
     height: 450px;
     width: 45vw;
-    overflow-y: auto; /* Add this to enable vertical scrolling if the content exceeds the box height */
+    overflow-y: auto;
   }
