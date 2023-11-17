@@ -8,7 +8,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./chat-bar.component.css'],
 })
 export class ChatBarComponent {
-  @Output() messageToSend = new EventEmitter<string>();
+  @Output() messageToSend = new EventEmitter<Message>();
 
   public chatMessage = '';
   public errorMessage = '';
@@ -40,9 +40,10 @@ export class ChatBarComponent {
     }
 
     const timestamp = new Date().toLocaleString('de');
-    const username = this.userService.getUsername();
-    const messageToSend = `${timestamp} - ${username}: ${message}<br>`;
+    const username = this.userService.getUsername() || '';
+    const content = message;
 
+    const messageToSend: Message = { timestamp, username, content };
     this.messageToSend.emit(messageToSend);
     this.chatMessage = '';
   }
@@ -51,4 +52,10 @@ export class ChatBarComponent {
     this.errorMessage = '';
     this.disableInput = false;
   }
+}
+
+interface Message {
+  timestamp: string;
+  username: string;
+  content: string;
 }

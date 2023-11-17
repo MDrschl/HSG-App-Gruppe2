@@ -7,14 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ChatApp';
-  messageHistory = '';
-  userHistory = '';
+  messageHistory: Message[] = [];
+  userHistory: string[] = [];
 
-  messageSubmitted(message: string): void {
-    this.messageHistory += message;
+  messageSubmitted(message: Message): void {
+    this.messageHistory.push(message);
+    console.log('Message History:', this.messageHistory);
   }
 
   userSubmitted(username: string): void {
-    this.userHistory = username; /* Das kann ersetzt werden durch 'this.userHistory += username;' um eine Liste von mehreren Usern zu erstellen */
+    this.userHistory.push(username);
   }
+}
+
+interface Message {
+  timestamp: string;
+  username: string;
+  content: string;
 }

@@ -1,3 +1,4 @@
+// user-history.component.ts
 import { Component, Input, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
 
 @Component({
@@ -6,17 +7,14 @@ import { Component, Input, ElementRef, ViewChild, AfterViewChecked } from '@angu
   styleUrls: ['./user-history.component.css']
 })
 export class UserHistoryComponent implements AfterViewChecked {
-  @Input() userhistory = '';
+  @Input() userhistory: string[] = [];
   @ViewChild('userHistoryBox', { static: false }) private userHistoryBox!: ElementRef;
 
   get usernames(): Username[] {
-    const usernamesArray = this.userhistory.split('\n');
-  
-    return usernamesArray.map(user => {
+    return this.userhistory.map(user => {
       return { content: user.trim() };
     }).filter(user => user.content !== '');
   }
-  
 
   ngAfterViewChecked() {
     this.scrollToBottom();

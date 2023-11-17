@@ -8,23 +8,10 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./chat-history.component.css'],
 })
 export class ChatHistoryComponent implements AfterViewChecked {
-  @Input() history: string = '';
+  @Input() messages: Message[] = [];
   @ViewChild('chatHistoryBox', { static: false }) private chatHistoryBox!: ElementRef;
 
   constructor(private userService: UserService) {}
-
-
-
-  get messages(): Message[] {
-    const messagesArray = this.history.split('<br>');
-  
-    return messagesArray.map(message => {
-      const [timestampAndUsername, content] = message.split(' - ');
-      const [timestamp, username] = timestampAndUsername.split(/, |: /);
-  
-      return { timestamp, username, content };
-    }).filter(message => message.content !== undefined && message.content.trim() !== '');
-  }
 
   ngAfterViewChecked() {
     this.scrollToBottom();
