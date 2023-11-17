@@ -1,4 +1,6 @@
+// chat-history.component.ts
 import { Component, Input, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-chat-history',
@@ -9,12 +11,18 @@ export class ChatHistoryComponent implements AfterViewChecked {
   @Input() history: string = '';
   @ViewChild('chatHistoryBox', { static: false }) private chatHistoryBox!: ElementRef;
 
+  constructor(private userService: UserService) {}
+
+
+
   get messages(): Message[] {
     const messagesArray = this.history.split('<br>');
-
+  
     return messagesArray.map(message => {
-      const [timestamp, content] = message.split(' - ');
-      return { timestamp, content };
+      const [timestampAndUsername, content] = message.split(' - ');
+      const [timestamp, username] = timestampAndUsername.split(/, |: /);
+  
+      return { timestamp, username, content };
     }).filter(message => message.content !== undefined && message.content.trim() !== '');
   }
 
@@ -33,5 +41,6 @@ export class ChatHistoryComponent implements AfterViewChecked {
 
 interface Message {
   timestamp: string;
+  username: string;
   content: string;
 }

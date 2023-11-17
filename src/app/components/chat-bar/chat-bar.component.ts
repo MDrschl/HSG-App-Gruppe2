@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+// chat-bar.component.ts
+import { Component, Output, EventEmitter } from '@angular/core';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-chat-bar',
@@ -12,7 +14,14 @@ export class ChatBarComponent {
   public errorMessage = '';
   public disableInput = false;
 
+  constructor(private userService: UserService) {}
+
   public addMessage(message: string): void {
+    if (!this.userService.userExists()) {
+      this.errorMessage = 'Bitte erstellen Sie zuerst einen Benutzer!';
+      return;
+    }
+
     message = message.replace(/(\r\n|\r|\n)/, '');
     message = message.trim();
 
@@ -31,7 +40,8 @@ export class ChatBarComponent {
     }
 
     const timestamp = new Date().toLocaleString('de');
-    const messageToSend = `${timestamp} - ${message}<br>`;
+    const username = this.userService.getUsername();
+    const messageToSend = `${timestamp} - ${username}: ${message}<br>`;
 
     this.messageToSend.emit(messageToSend);
     this.chatMessage = '';

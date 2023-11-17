@@ -1,10 +1,9 @@
-<!-- chat-history.component.html -->
 <div class="chat-history" #chatHistoryBox>
-    <div *ngFor="let message of messages" class="chat-message">
-      <ng-container *ngIf="message.content !== undefined && message.content.trim() !== ''">
-        <span class="message-timestamp">{{ message.timestamp }}</span>
-        <span class="message-content">{{ message.content }}</span>
-      </ng-container>
-    </div>
+  <div *ngFor="let message of messages" class="chat-message">
+    <ng-container *ngIf="!!message && !!message.content">
+      <span class="message-username">{{ message.username }}</span>
+      <span class="message-content">{{ message.content }}</span>
+      <span class="message-timestamp">{{ message.timestamp }}</span>
+    </ng-container>
   </div>
-  
+</div>

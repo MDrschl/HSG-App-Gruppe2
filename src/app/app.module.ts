@@ -19,7 +19,7 @@ import { UserHistoryComponent } from './components/user-history/user-history.com
     ChatBarComponent,
     ChatHistoryComponent,
     ChatUserComponent,
-    UserHistoryComponent
+    UserHistoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
 nav
 {
     height: 10vh;
-    /* border-bottom: 1px solid #707070; */
     padding: 0;
     padding-left: 7.5vw;
     padding-right: 7.5vw;
@@ -10,7 +9,7 @@ nav
     display: flex;
     justify-content: space-between;
 }
-/*eigenes Logo*/
+
 #logo 
 {
     height: inherit;

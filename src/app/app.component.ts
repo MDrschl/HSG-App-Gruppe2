@@ -15,6 +15,6 @@ export class AppComponent {
   }
 
   userSubmitted(username: string): void {
-    this.userHistory += username;
+    this.userHistory = username; /* Das kann ersetzt werden durch 'this.userHistory += username;' um eine Liste von mehreren Usern zu erstellen */
   }
 }
