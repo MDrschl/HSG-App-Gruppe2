@@ -16,8 +16,15 @@ export class AppComponent {
   }
 
   userSubmitted(username: string): void {
-    this.userHistory.push(username);
+    if (username.trim() !== '') {
+      if (this.userHistory.length === 0) {
+        this.userHistory.push(username);
+      } else {
+        this.userHistory[0] = username;
+      }
+    }
   }
+  
 }
 
 interface Message {

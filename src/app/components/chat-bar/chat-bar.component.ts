@@ -38,7 +38,7 @@ export class ChatBarComponent {
       this.errorMessage = '';
       this.disableInput = false;
     }
-
+    
     const timestamp = new Date().toLocaleString('de');
     const username = this.userService.getUsername() || '';
     const content = message;
