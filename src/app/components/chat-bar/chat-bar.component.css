@@ -1,3 +1,7 @@
+*, ::after, ::before {
+    box-sizing: none;
+}
+
 .chat {
     height: 70%;
     border: 1px solid #707070;
@@ -9,11 +13,11 @@
 
   #chat-textarea {
     border-radius: 15px;
-    margin-right: 1vw;
+    /* margin-right: 1vw; */
     line-height: 2.3;
     vertical-align: middle;
     resize: none;
-    position: fixed;
+    /* position: fixed; */
     bottom: 130px;
     width: 45vw;
     display: inline-block;
@@ -22,9 +26,10 @@
 
 #div-btn-send {
     border: none !important;
-    position: absolute;
+    /* position: absolute; */
     bottom: 130px;
     right: 210px;
+    margin-left: 1vw;
     display: inline-block;
 }
 #btn-send{
@@ -41,4 +46,9 @@
 
 .chat-input{
     display: flex;
+}
+
+.alert
+{
+    margin-top: 1vh;
 }

@@ -36,6 +36,6 @@
     border-radius: 15px;
     padding: 10px;
     height: 450px;
-    width: 50vw;
     overflow-y: auto;
+    margin-bottom: 1vh;
   }
