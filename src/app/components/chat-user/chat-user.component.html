@@ -5,6 +5,7 @@
       id="user-textarea"
       [(ngModel)]="username"
       placeholder="Benutzername anlegen"
+      (keyup.enter)="createUser()"
     />
   </div>
   <div id="div-btn-user">

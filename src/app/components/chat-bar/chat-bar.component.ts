@@ -22,7 +22,6 @@ export class ChatBarComponent {
       return;
     }
 
-    message = message.replace(/(\r\n|\r|\n)/, '');
     message = message.trim();
 
     if (!message) {
