@@ -1,4 +1,4 @@
-<div class="chat-history" #chatHistoryBox>
+<div class="chat-history  border" #chatHistoryBox>
   <div *ngFor="let message of messages" class="chat-message">
     <ng-container *ngIf="!!message && !!message.content">
       <span class="message-username">{{ message.username }}</span>

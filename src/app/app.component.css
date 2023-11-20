@@ -7,6 +7,16 @@ h1{
     font-size: 1.2rem;
 }
 
+/*Style der Rahmen*/
+.border{
+    border-style: none !important;
+    border-style: #767676 !important;
+}
+
+/* .input-style{
+    border-color: #red !important;
+} */
+
 main{
     margin-top: 2vh;
     margin-bottom: 2vh;

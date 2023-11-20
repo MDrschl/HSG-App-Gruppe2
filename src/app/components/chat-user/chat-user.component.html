@@ -3,9 +3,10 @@
     <input
       type="text"
       id="user-textarea"
+      class="border"
       [(ngModel)]="username"
-      placeholder="Benutzername anlegen"
     />
+          <!-- Entfernt: placeholder="Benutzername anlegen" -->
   </div>
   <div id="div-btn-user">
     <button (click)="createUser()" class="btn" id="btn-user">
@@ -15,4 +16,4 @@
   </div>
 </div>
 
-<div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>
+<div *ngIf="errorMessage" class="alert alert-warning" id="user-alert">{{ errorMessage }}</div>
