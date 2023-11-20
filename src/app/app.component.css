@@ -17,11 +17,6 @@ main{
     width: auto;
 }
 
-.main-wrapper{
-    padding-left: 7.5vw;
-    padding-right: 7.5vw;
-}
-
 .master-wrapper{
     display: flex;
     flex-direction: column;
@@ -47,9 +42,8 @@ main{
 
 #Person-Chat
 {
-    /* float: left; */
-    /* width: 40%; */
-    max-width: 80%;
+    margin-top: 2vh;
+    max-width: 60%;
     max-height: 80%;
     transform: scaleX(-1);
     /* margin-left: 2vw; */

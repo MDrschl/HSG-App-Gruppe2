@@ -19,7 +19,7 @@
     resize: none;
     /* position: fixed; */
     bottom: 130px;
-    width: 45vw;
+    width: 90%;
     display: inline-block;
   }
   
@@ -29,7 +29,8 @@
     /* position: absolute; */
     bottom: 130px;
     right: 210px;
-    margin-left: 1vw;
+    /* margin-left: 1vw; */
+    margin-left: auto;
     display: inline-block;
 }
 #btn-send{
