@@ -19,7 +19,7 @@ footer a{
     margin-left: 5vw;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
     .footer-wrapper{
         display: flex;
         justify-content: center;

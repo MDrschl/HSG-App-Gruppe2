@@ -8,9 +8,10 @@
     <div id="div-btn-send">
         <button (click)="addMessage(chatMessage)"
                 [disabled]="chatMessage === ''"
-                class="btn btn-primary border"
+                class="btn-primary border"
                 id="btn-send">
-        <img class="icon" src="../../../assets/Images/send-icon.svg"></button>
+        <!-- <img class="icon" src="../../../assets/Images/send-icon.svg"></button> -->
+        <img class="icon" id="btn-send-img" src="../../../assets/Images/send-btn.svg"></button>
     </div>
 </div>
 <div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>

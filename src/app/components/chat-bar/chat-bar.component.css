@@ -26,19 +26,19 @@
 
 #div-btn-send {
     border: none !important;
-    /* position: absolute; */
-    bottom: 130px;
-    right: 210px;
-    /* margin-left: 1vw; */
     margin-left: auto;
     display: inline-block;
 }
 #btn-send{
     border-radius: 100vw;
     height: 50px;
-    width: 50px;
-    background-color: #00802f;
+    width: 60px;
+    background-color: unset; 
     border: none !important;
+}
+
+#btn-send-img{
+    height: 100%;
 }
 
 .border{
