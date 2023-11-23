@@ -21,7 +21,7 @@ export class ChatUserComponent {
     const trimmedUsername = this.username.trim();
 
     if (trimmedUsername === '') {
-      this.errorMessage = 'Bitte fügen Sie einen Benutzer hinzu';
+      this.errorMessage = 'Bitte fügen Sie einen Benutzer hinzu.';
     } else if (trimmedUsername.length > 12) {
       this.errorMessage = 'Warnung: Der Benutzername überschreitet 12 Zeichen!';
       this.disableInput = true;
