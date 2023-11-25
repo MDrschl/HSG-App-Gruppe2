@@ -1,7 +1,9 @@
 <div class="chat-history  border" #chatHistoryBox>
-  <div *ngFor="let message of messages" class="chat-message">
+  <div *ngFor="let message of messages; let i = index" class="chat-message">
     <ng-container *ngIf="!!message && !!message.content">
-      <span class="message-username">{{ message.username }}</span>
+      <ng-container *ngIf="isDifferentUser(message, i)">
+        <span class="message-username">{{ message.username }}</span>
+      </ng-container>
       <span class="message-content">{{ message.content }}</span>
       <span class="message-timestamp">{{ message.timestamp }}</span>
     </ng-container>
