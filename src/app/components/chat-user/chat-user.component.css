@@ -6,23 +6,35 @@
   }
   
   .user-label {
-    position: relative;
     margin-right: 20px;
   }
   
   #btn-user {
-    position: relative;
     margin-left: 10px;
-    border-radius: 100vw;
     height: 55px;
     width: 55px;
     padding: 0;
+    transition: 0.2s ease;
   }
+
+  /*hover animation*/
+  #btn-user:hover{
+    scale: 105%;
+    transition: 0.3s ease;
+  }
+
+  #user-alert{
+    display: block;
+    width: 250px;
+    max-width: 98%;
+  }
+
 
   #bt-user img{
     height: 50px;
     width: 50px;
   }
+
 #div-btn-user {
     border: none !important;
     position: relative;

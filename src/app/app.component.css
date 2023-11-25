@@ -7,6 +7,16 @@ h1{
     font-size: 1.2rem;
 }
 
+button{
+    transition: 0.5s ease-in-out;
+}
+
+button:hover{
+    scale: 102%;
+    transition: 0.5s ease-in-out;
+}
+
+
 /*Style der Rahmen*/
 .border{
     border-style: none !important;
@@ -52,12 +62,18 @@ main{
 
 #Person-Chat
 {
-    margin-top: 2vh;
-    max-width: 60%;
-    max-height: 80%;
+    width: 60%;
     transform: scaleX(-1);
-    /* margin-left: 2vw; */
-    /* margin-top: 10vh; */
+    max-height: 40vh;
+    width: auto;
+    max-width: 100%;
+}
+
+
+#user-history {
+    display: block;
+    width: 190px;
+    max-width: 98%;
 }
 
 /* Mediaquery */

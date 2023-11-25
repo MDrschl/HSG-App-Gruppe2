@@ -1,7 +1,7 @@
 .user-history {
     border: none;
     border-radius: 15px;
-    width: 200px;
+    /* width: 200px; */
 }
 .user-interface {
     display: flex;
@@ -11,6 +11,6 @@
     color: #ffffff;
     border-radius: 10px;
     padding: 10px;
-    position: relative;
+    /* position: relative; */
   }
   

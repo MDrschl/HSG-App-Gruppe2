@@ -2,6 +2,15 @@
     box-sizing: none;
 }
 
+button{
+    transition: 0.5s ease-in-out;
+}
+
+button:hover{
+    scale: 102%;
+    transition: 0.5s ease-in-out;
+}
+
 .chat {
     height: 70%;
     border: 1px solid #707070;
@@ -35,10 +44,19 @@
     width: 60px;
     background-color: unset; 
     border: none !important;
+    transition: 0.5s ease-in-out;
 }
 
+/*animation*/
 #btn-send-img{
     height: 100%;
+    transition: 0.2s ease;
+
+}
+
+#btn-send-img:hover{
+    scale: 105%;
+    transition: 0.3s ease;
 }
 
 .border{
