@@ -19,11 +19,8 @@
     right: 6px;
 }
 .message-username {
-  font-size: 0.8em;
+  font-family: "Gill Sans MT Pro-Bold";
   color: #ffffff;
-  position: absolute; 
-  top: 3px;
-  right: 6px;
 }
   
 .message-content {
