@@ -6,6 +6,7 @@
       class="border"
       [(ngModel)]="username"
       placeholder="Benutzername anlegen"
+      (keyup.enter)="createUser()"
     />
           <!-- Entfernt: placeholder="Benutzername anlegen" -->
   </div>
