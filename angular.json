@@ -118,6 +118,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/hsg-app-gruppe2",
+            "netlifyToken": "nfp_aWWi6FS9M9WkAjco8Sk6rQfSBoo8XgnW0366",
+            "siteId": ""
+          }
         }
       }
     }
