@@ -1,8 +1,26 @@
+@font-face {
+    font-family: Gill Sans MT Pro-Light;
+    src: url(../assets/Font/GillSansMTPro-Light.otf);
+  }
+  @font-face {
+    font-family: Gill Sans MT Pro-Bold;
+    src: url(../assets/Font/GillSansMTPro-Bold.otf);
+  }
 
 h1, h2, h3, h4, h5, h6{
     font-weight: bold;
     color: #767676;
+    font-family: "Gill Sans MT Pro-Bold";
 }
+
+div, p, a, input, select, textarea{
+    font-family: "Gill Sans MT Pro-Light";
+}
+
+.bold-font{
+    font-family: "Gill Sans MT Pro-Bold" !important;
+}
+
 h1{
     font-size: 1.2rem;
 }
