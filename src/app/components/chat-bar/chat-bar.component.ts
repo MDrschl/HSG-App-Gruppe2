@@ -1,6 +1,7 @@
 // chat-bar.component.ts
 import { Component, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { ChatServiceService } from 'src/app/services/chat.service.service';
 
 @Component({
   selector: 'app-chat-bar',
@@ -15,6 +16,7 @@ export class ChatBarComponent {
   public disableInput = false;
 
   constructor(private userService: UserService) {}
+
 
   public addMessage(message: string): void {
     if (!this.userService.userExists()) {
