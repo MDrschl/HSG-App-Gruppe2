@@ -2,6 +2,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { ChatServiceService } from 'src/app/services/chat.service.service';
+import { ChatMessage } from 'src/shared/models/chat-message';
 
 @Component({
   selector: 'app-chat-bar',
@@ -9,14 +10,16 @@ import { ChatServiceService } from 'src/app/services/chat.service.service';
   styleUrls: ['./chat-bar.component.css'],
 })
 export class ChatBarComponent {
-  @Output() messageToSend = new EventEmitter<Message>();
+  @Output() messageToSend = new EventEmitter<ChatMessage>();
 
   public chatMessage = '';
   public errorMessage = '';
   public disableInput = false;
 
-  constructor(private userService: UserService) {}
-
+  constructor(
+    private userService: UserService,
+    private chatService: ChatServiceService
+  ) {}
 
   public addMessage(message: string): void {
     if (!this.userService.userExists()) {
@@ -39,13 +42,26 @@ export class ChatBarComponent {
       this.errorMessage = '';
       this.disableInput = false;
     }
-    
-    const timestamp = new Date().toLocaleString('de');
+
+    const createdAt = new Date();
     const username = this.userService.getUsername() || '';
     const content = message;
 
-    const messageToSend: Message = { timestamp, username, content };
+    const messageToSend: ChatMessage = {message: content, nickname: username, createdAt};
+    
+    
     this.messageToSend.emit(messageToSend);
+    
+    
+    this.chatService.addToHistory(messageToSend).subscribe(
+      (response) => {
+        console.log('Nachricht erfolgreich zur History hinzugefügt:', response);
+      },
+      (error) => {
+        console.error('Error Nachricht zur History hinzuzufügen:', error);
+      }
+    );
+
     this.chatMessage = '';
   }
 
@@ -55,8 +71,4 @@ export class ChatBarComponent {
   }
 }
 
-interface Message {
-  timestamp: string;
-  username: string;
-  content: string;
-}
+

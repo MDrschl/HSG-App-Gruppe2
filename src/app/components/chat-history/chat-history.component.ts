@@ -1,6 +1,7 @@
 // chat-history.component.ts
 import { Component, Input, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { ChatMessage } from 'src/shared/models/chat-message';
 
 @Component({
   selector: 'app-chat-history',
@@ -8,7 +9,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./chat-history.component.css'],
 })
 export class ChatHistoryComponent implements AfterViewChecked {
-  @Input() messages: Message[] = [];
+  @Input() messages: ChatMessage[] = [];
   @ViewChild('chatHistoryBox', { static: false }) private chatHistoryBox!: ElementRef;
 
   constructor(private userService: UserService) {}
@@ -25,13 +26,9 @@ export class ChatHistoryComponent implements AfterViewChecked {
     }
   }
 
-  isDifferentUser(message: Message, index: number): boolean {
-    return index === 0 || message.username !== this.messages[index -1].username;
+  isDifferentUser(message: ChatMessage, index: number): boolean {
+    return index === 0 || message.nickname !== this.messages[index -1].nickname;
   }
 }
 
-interface Message {
-  timestamp: string;
-  username: string;
-  content: string;
-}
+

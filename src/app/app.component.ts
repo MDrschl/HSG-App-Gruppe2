@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChatMessage } from 'src/shared/models/chat-message';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ChatApp';
-  messageHistory: Message[] = [];
+  messageHistory: ChatMessage[] = [];
   userHistory: string[] = [];
 
-  messageSubmitted(message: Message): void {
+  messageSubmitted(message: ChatMessage): void {
     this.messageHistory.push(message);
     console.log('Message History:', this.messageHistory);
   }
@@ -26,10 +27,5 @@ export class AppComponent {
   }
 }
 
-interface Message {
-  timestamp: string;
-  username: string;
-  content: string;
-}
 
 
