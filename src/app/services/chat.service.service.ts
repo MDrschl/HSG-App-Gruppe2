@@ -13,8 +13,10 @@ export class ChatServiceService {
 
   public constructor(private httpClient: HttpClient) {}
 
-  public getChatMessage(): Observable<ChatMessage[]>{
-    return this.httpClient.get<ChatMessage[]>(`${this.baseUrl}history`)
+  
+  public getChatMessages(): Observable<ChatMessage[]> {
+    return this.httpClient.get<ChatMessage[]>(`${this.baseUrl}history`);
+    // return this.httpClient.get<ChatMessage[]>(this.baseUrl + 'history');
   }
   public addToHistory(message: ChatMessage): Observable<ChatMessage[]> {
     return this.httpClient.post<ChatMessage[]>(`${this.baseUrl}history`, message);

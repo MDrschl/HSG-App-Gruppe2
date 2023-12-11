@@ -3,6 +3,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { ChatServiceService } from 'src/app/services/chat.service.service';
 import { ChatMessage } from 'src/shared/models/chat-message';
+import { Subject, finalize, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-chat-bar',
@@ -10,16 +11,24 @@ import { ChatMessage } from 'src/shared/models/chat-message';
   styleUrls: ['./chat-bar.component.css'],
 })
 export class ChatBarComponent {
-  @Output() messageToSend = new EventEmitter<ChatMessage>();
+  
 
   public chatMessage = '';
   public errorMessage = '';
   public disableInput = false;
+  public saving = false;
+  private destroyed = new Subject<void>();
+
 
   constructor(
     private userService: UserService,
     private chatService: ChatServiceService
   ) {}
+
+  ngOnDestroy(): void {
+    this.destroyed.next();
+    this.destroyed.complete();
+  }
 
   public addMessage(message: string): void {
     if (!this.userService.userExists()) {
@@ -27,6 +36,7 @@ export class ChatBarComponent {
       return;
     }
 
+    message = message.replace(/(\r\n|\r|\n)/, '');
     message = message.trim();
 
     if (!message) {
@@ -43,26 +53,29 @@ export class ChatBarComponent {
       this.disableInput = false;
     }
 
-    const createdAt = new Date();
+    //const createdAt = new Date();
     const username = this.userService.getUsername() || '';
     const content = message;
 
-    const messageToSend: ChatMessage = {message: content, nickname: username, createdAt};
+    const messageToSend: ChatMessage = {message: content, nickname: username};
     
     
-    this.messageToSend.emit(messageToSend);
     
-    
-    this.chatService.addToHistory(messageToSend).subscribe(
-      (response) => {
-        console.log('Nachricht erfolgreich zur History hinzugefügt:', response);
-      },
-      (error) => {
-        console.error('Error Nachricht zur History hinzuzufügen:', error);
+    this.chatService.addToHistory(messageToSend).pipe(
+      finalize(() => (this.saving = false)),
+      takeUntil(this.destroyed)
+    ).subscribe(
+      {
+        next: () => {
+          this.chatMessage = '';
+          this.errorMessage = '';
+        },
+        error: (error: Error) => {
+          this.errorMessage = error.message;
+        },
       }
     );
-
-    this.chatMessage = '';
+    
   }
 
   public resetWarning(): void {

@@ -2,6 +2,8 @@
 import { Component, Input, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { ChatMessage } from 'src/shared/models/chat-message';
+import { EMPTY, Observable, catchError } from 'rxjs';
+import { ChatServiceService } from 'src/app/services/chat.service.service';
 
 @Component({
   selector: 'app-chat-history',
@@ -9,13 +11,37 @@ import { ChatMessage } from 'src/shared/models/chat-message';
   styleUrls: ['./chat-history.component.css'],
 })
 export class ChatHistoryComponent implements AfterViewChecked {
-  @Input() messages: ChatMessage[] = [];
+  @Input() history = '';
+
+  public errorMessage = '';
+  public chatMessages$ = new Observable<ChatMessage[]>();
   @ViewChild('chatHistoryBox', { static: false }) private chatHistoryBox!: ElementRef;
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private chatService: ChatServiceService
+  ) {}
+
+  ngOnInit(): void {
+    this.getHistory();
+
+    setInterval(() => {
+      this.getHistory();
+    }, 2000);
+  }
 
   ngAfterViewChecked() {
     this.scrollToBottom();
+  }
+
+  private getHistory(): void {
+    this.chatMessages$ = this.chatService.getChatMessages().pipe(
+      catchError((error: Error) => {
+        this.errorMessage = error.message;
+
+        return EMPTY;
+      })
+    );
   }
 
   private scrollToBottom(): void {
@@ -26,9 +52,9 @@ export class ChatHistoryComponent implements AfterViewChecked {
     }
   }
 
-  isDifferentUser(message: ChatMessage, index: number): boolean {
-    return index === 0 || message.nickname !== this.messages[index -1].nickname;
-  }
+ // isDifferentUser(message: ChatMessage, index: number): boolean {
+   // return index === 0 || message.nickname !== this.chatMessages$[index -1].nickname;
+ // }
 }
 
 
