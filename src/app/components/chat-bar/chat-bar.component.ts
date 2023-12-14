@@ -4,6 +4,7 @@ import { UserService } from '../../services/user.service';
 import { ChatServiceService } from 'src/app/services/chat.service.service';
 import { ChatMessage } from 'src/shared/models/chat-message';
 import { Subject, finalize, takeUntil } from 'rxjs';
+import { JokeService } from 'src/joke.service';
 
 @Component({
   selector: 'app-chat-bar',
@@ -22,9 +23,25 @@ export class ChatBarComponent {
 
   constructor(
     private userService: UserService,
-    private chatService: ChatServiceService
+    private chatService: ChatServiceService,
+    private jokeService: JokeService
   ) {}
 
+  sendRandomJoke(): void {
+    
+    this.jokeService.getRandomJoke().subscribe((response) => {
+      const jokeMessage: ChatMessage = {
+        nickname: 'JokeBot',  
+        message: response.joke,
+        createdAt: new Date(),
+      };
+
+      this.chatService.addToHistory(jokeMessage).subscribe(() => {
+
+        
+      });
+    });
+  }
   ngOnDestroy(): void {
     this.destroyed.next();
     this.destroyed.complete();

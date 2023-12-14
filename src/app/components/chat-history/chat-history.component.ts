@@ -60,6 +60,10 @@ export class ChatHistoryComponent implements AfterViewChecked {
     return index === 0 || message.nickname !== messages[index - 1]?.nickname;
   }
 
+  isJokeBot(message: ChatMessage): boolean {
+    return message.nickname === 'JokeBot';
+  }
+
   
 
 }

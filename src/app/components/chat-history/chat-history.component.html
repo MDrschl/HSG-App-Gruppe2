@@ -1,7 +1,11 @@
 <div class="chat-history border" #chatHistoryBox>
   <div *ngIf="chatMessages$ | async as chatMessages; else loading">
     <div *ngFor="let chatMessage of chatMessages; let i = index" 
-         [ngClass]="{'current-user': isCurrentUser(chatMessage), 'other-user': !isCurrentUser(chatMessage)}" 
+         [ngClass]="{
+           'current-user': isCurrentUser(chatMessage) && !isJokeBot(chatMessage), 
+           'joke-bot': isJokeBot(chatMessage),
+           'other-user': !isCurrentUser(chatMessage) && !isJokeBot(chatMessage)
+         }" 
          class="message">
       <ng-container *ngIf="isDifferentUser(chatMessage, i, chatMessages)">
         <span class="message-username">{{ chatMessage.nickname }}</span>
@@ -12,6 +16,12 @@
   </div>
   <ng-template #loading>Loading...</ng-template>
 </div>
+
+
+
+
+
+
 
 
 

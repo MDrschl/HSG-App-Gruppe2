@@ -1,73 +1,41 @@
-*, ::after, ::before {
-    box-sizing: none;
-}
-
-button{
-    transition: 0.5s ease-in-out;
-}
-
-button:hover{
-    scale: 102%;
-    transition: 0.5s ease-in-out;
-}
-
-.chat {
-    height: 70%;
-    border: 1px solid #707070;
-    padding-left: 2.5vw;
-    padding-right: 5vw;
-    padding-top: 2.5vh;
-    position: relative; 
-  }
-
-  #chat-textarea {
-    border-radius: 15px;
-    /* margin-right: 1vw; */
-    line-height: 2.3;
-    vertical-align: middle;
-    resize: none;
-    /* position: fixed; */
-    bottom: 130px;
-    width: 90%;
-    display: inline-block;
+/* styles.css or your component's CSS file */
+.chat-input {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
   }
   
-
-#div-btn-send {
-    border: none !important;
-    margin-left: auto;
-    display: inline-block;
-}
-#btn-send{
+  #div-btn-send {
+    display: flex;
+    align-items: center; /* Align items horizontally */
+  }
+  
+  #chat-textarea {
+    border-radius: 15px;
+    line-height: 2.3;
+    resize: none;
+    width: 100%; /* Take up the available width */
+  }
+  
+  .btn-primary {
     border-radius: 100vw;
     height: 50px;
     width: 60px;
-    background-color: unset; 
+    background-color: unset;
     border: none !important;
     transition: 0.5s ease-in-out;
-}
-
-/*animation*/
-#btn-send-img{
+  }
+  
+  #btn-send-img {
     height: 100%;
     transition: 0.2s ease;
-
-}
-
-#btn-send-img:hover{
-    scale: 105%;
+  }
+  
+  #btn-send-img:hover {
+    transform: scale(1.05);
     transition: 0.3s ease;
-}
-
-.border{
-    border-radius: 20px;
-}
-
-.chat-input{
-    display: flex;
-}
-
-.alert
-{
+  }
+  
+  .alert {
     margin-top: 1vh;
-}
+  }
+  

@@ -1,17 +1,24 @@
+<!-- chat-history.component.html -->
 <div class="chat-input">
-    <textarea class="form-control border" id="chat-textarea"
+    <div id="div-btn-send" class="d-flex align-items-center">
+      <textarea class="form-control border" id="chat-textarea"
         rows="1" 
         [(ngModel)]="chatMessage" 
         (keyup.enter)="addMessage(chatMessage)"
         placeholder="Schreibe hier Deine Nachricht..."
-    ></textarea>
-    <div id="div-btn-send">
-        <button (click)="addMessage(chatMessage)"
-                [disabled]="chatMessage === ''"
-                class="btn-primary border"
-                id="btn-send">
-        <!-- <img class="icon" src="../../../assets/Images/send-icon.svg"></button> -->
-        <img class="icon" id="btn-send-img" src="../../../assets/Images/send-btn.svg"></button>
+      ></textarea>
+      <button (click)="addMessage(chatMessage)"
+        [disabled]="chatMessage === ''"
+        class="btn-primary border ml-2" 
+        id="btn-send">
+        <img class="icon" id="btn-send-img" src="../../../assets/Images/send-btn.svg">
+      </button>
+     
+      <button (click)="sendRandomJoke()" class="btn-primary border ml-2">
+        Get a Joke
+      </button>
     </div>
-</div>
-<div *ngIf="errorMessage" class="alert alert-warning">{{ errorMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-warning ml-2 mt-2">{{ errorMessage }}</div>
+  </div>
+  
+  

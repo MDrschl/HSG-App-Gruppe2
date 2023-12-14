@@ -10,6 +10,18 @@
     margin-left: 100px;
     position: relative;
   }
+  .joke-bot{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    background-color: grey;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    align-self: flex-end;
+    
+    position: relative;
+  }
 
   .other-user {
     display: flex;
