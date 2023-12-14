@@ -1,12 +1,11 @@
 <div class="chat-history border" #chatHistoryBox>
   <div *ngFor="let chatMessage of chatMessages$ | async; let i = index" class="chat-message">
     <ng-container>
-      <ng-container>
-        <span class="message-username">{{ chatMessage.nickname }}</span>
-      </ng-container>
-      <span class="message-message">{{ chatMessage.message }}</span>
-      <span class="message-timestamp">{{ chatMessage.createdAt | date:'dd.MM.yyyy HH:mm' }}</span>
+      <span class="message-username">{{ chatMessage.nickname }}</span>
     </ng-container>
+    <span class="message-message">{{ chatMessage.message }}</span>
+    <span class="message-timestamp">{{ chatMessage.createdAt | date:'dd.MM.yyyy HH:mm' }}</span>
   </div>
 </div>
+
 

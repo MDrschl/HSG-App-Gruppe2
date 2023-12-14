@@ -51,6 +51,7 @@ export class ChatHistoryComponent implements AfterViewChecked {
       console.error(err);
     }
   }
+  
 
  // isDifferentUser(message: ChatMessage, index: number): boolean {
    // return index === 0 || message.nickname !== this.chatMessages$[index -1].nickname;
