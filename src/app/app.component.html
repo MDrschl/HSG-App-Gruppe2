@@ -2,22 +2,16 @@
 <div class="master-wrapper">
   <div class="container">
     <app-header></app-header>
-
     <div class="main-wrapper">
       <main class="wrapper">
         <div class="col left">
           <h1>Benutzer anlegen</h1>
           <app-chat-user (userCreated)="userSubmitted($event)"></app-chat-user>
           <app-user-history [userhistory]="userHistory" id="user-history"></app-user-history>
-          
           <div>
             <img id="Person-Chat" src="../../assets/Images/Person-Chat_gruen.png">
           </div>  
         </div>
-  <!-- 
-        <div class="col">
-          <app-user-history [userhistory]="userHistory"></app-user-history>
-        </div> -->
         <div class="right">
           <div class="col">
             <app-chat-history ></app-chat-history>

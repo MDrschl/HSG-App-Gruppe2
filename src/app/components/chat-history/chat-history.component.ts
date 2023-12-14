@@ -14,7 +14,7 @@ export class ChatHistoryComponent implements AfterViewChecked {
   @Input() history = '';
 
   public errorMessage = '';
-  public chatMessages$ = new Observable<ChatMessage[]>();
+  public chatMessages$: Observable<ChatMessage[]> = new Observable<ChatMessage[]>();
   @ViewChild('chatHistoryBox', { static: false }) private chatHistoryBox!: ElementRef;
 
   constructor(
@@ -38,7 +38,6 @@ export class ChatHistoryComponent implements AfterViewChecked {
     this.chatMessages$ = this.chatService.getChatMessages().pipe(
       catchError((error: Error) => {
         this.errorMessage = error.message;
-
         return EMPTY;
       })
     );
@@ -51,11 +50,21 @@ export class ChatHistoryComponent implements AfterViewChecked {
       console.error(err);
     }
   }
+
+  isCurrentUser(message: ChatMessage): boolean {
+    const currentUser = this.userService.getUsername();
+    return message.nickname === currentUser;
+  }
+
+  isDifferentUser(message: ChatMessage, index: number, messages: ChatMessage[]): boolean {
+    return index === 0 || message.nickname !== messages[index - 1]?.nickname;
+  }
+
   
 
- // isDifferentUser(message: ChatMessage, index: number): boolean {
-   // return index === 0 || message.nickname !== this.chatMessages$[index -1].nickname;
- // }
 }
+
+
+
 
 

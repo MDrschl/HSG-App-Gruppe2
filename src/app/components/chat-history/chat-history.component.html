@@ -1,11 +1,22 @@
 <div class="chat-history border" #chatHistoryBox>
-  <div *ngFor="let chatMessage of chatMessages$ | async; let i = index" class="chat-message">
-    <ng-container>
-      <span class="message-username">{{ chatMessage.nickname }}</span>
-    </ng-container>
-    <span class="message-message">{{ chatMessage.message }}</span>
-    <span class="message-timestamp">{{ chatMessage.createdAt | date:'dd.MM.yyyy HH:mm' }}</span>
+  <div *ngIf="chatMessages$ | async as chatMessages; else loading">
+    <div *ngFor="let chatMessage of chatMessages; let i = index" 
+         [ngClass]="{'current-user': isCurrentUser(chatMessage), 'other-user': !isCurrentUser(chatMessage)}" 
+         class="message">
+      <ng-container *ngIf="isDifferentUser(chatMessage, i, chatMessages)">
+        <span class="message-username">{{ chatMessage.nickname }}</span>
+      </ng-container>
+      <span class="message-message">{{ chatMessage.message }}</span>
+      <span class="message-timestamp">{{ chatMessage.createdAt | date:'dd.MM.yyyy HH:mm' }}</span>
+    </div>
   </div>
+  <ng-template #loading>Loading...</ng-template>
 </div>
+
+
+
+
+
+
 
 
