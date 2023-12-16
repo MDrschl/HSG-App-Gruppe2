@@ -9,7 +9,7 @@
 
 h1, h2, h3, h4, h5, h6{
     font-weight: bold;
-    color: #767676;
+    color: #424242;
     font-family: "Gill Sans MT Pro-Bold";
 }
 
@@ -38,12 +38,10 @@ button:hover{
 /*Style der Rahmen*/
 .border{
     border-style: none !important;
-    border-style: #767676 !important;
+    border-style: #293033 !important;
 }
 
-/* .input-style{
-    border-color: #red !important;
-} */
+
 
 main{
     margin-top: 2vh;
@@ -75,7 +73,6 @@ main{
 }
 .right {
     width: 70%;
-    /* max-height: 100%; */
 }
 
 #Person-Chat
@@ -90,8 +87,9 @@ main{
 
 #user-history {
     display: block;
-    width: 190px;
+    width: 180px;
     max-width: 98%;
+
 }
 
 /* Mediaquery */
