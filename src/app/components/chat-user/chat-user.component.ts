@@ -66,8 +66,11 @@ export class ChatUserComponent {
       const includesSponsor = sponsors.some(sponsor => trimmedUsername.includes(sponsor));
       // Neue Regel 7: Der Benutzername muss das Wort "TeamSprint" enthalten
       const includesTeamSprint = trimmedUsername.includes('TeamSprint');
-  
-      if (!hasMinLength) {
+
+
+      if (trimmedUsername === '') {
+        this.errorMessage = 'Bitte fügen Sie einen Benutzer hinzu.';
+      } else if (!hasMinLength) {
         this.errorMessage = 'Regel 1: Der Benutzername muss mindestens 5 Zeichen lang sein.';
       } else if (!hasNumber) {
         this.errorMessage = 'Regel 2: Der Benutzername muss mindestens eine Zahl enthalten.';
