@@ -8,10 +8,22 @@
          }" 
          class="message">
       <ng-container *ngIf="isDifferentUser(chatMessage, i, chatMessages)">
-        <span class="message-username">{{ chatMessage.nickname }}</span>
+        <span [ngClass]="{
+          'message-username': isCurrentUser(chatMessage) && !isJokeBot(chatMessage), 
+          'message-username-joke': isJokeBot(chatMessage),
+          'message-username-other': !isCurrentUser(chatMessage) && !isJokeBot(chatMessage)
+        }">{{ chatMessage.nickname }}</span>
       </ng-container>
-      <span class="message-message">{{ chatMessage.message }}</span>
-      <span class="message-timestamp">{{ chatMessage.createdAt | date:'dd.MM.yyyy HH:mm' }}</span>
+      <span [ngClass]="{
+        'message-content': isCurrentUser(chatMessage) && !isJokeBot(chatMessage), 
+        'message-content-joke': isJokeBot(chatMessage),
+        'message-content-other': !isCurrentUser(chatMessage) && !isJokeBot(chatMessage)
+      }">{{ chatMessage.message }}</span>
+      <span [ngClass]="{
+        'message-timestamp': isCurrentUser(chatMessage) && !isJokeBot(chatMessage), 
+        'message-timestamp-joke': isJokeBot(chatMessage),
+        'message-timestamp-other': !isCurrentUser(chatMessage) && !isJokeBot(chatMessage)
+      }">{{ chatMessage.createdAt | date:'dd.MM.yyyy HH:mm' }}</span>
     </div>
   </div>
   <ng-template #loading>Loading...</ng-template>

@@ -34,6 +34,7 @@ export class ChatUserComponent {
   isNameInAllUsernames(name: string): boolean {
     return this.allNicknames.includes(name);
   }
+
   public username = '';
   public errorMessage = '';
   public disableInput = false;
@@ -80,7 +81,9 @@ export class ChatUserComponent {
         this.errorMessage = 'Regel 6: Der Benutzername muss mindestens einen unserer Sponsoren enthalten: HSG, Angular, Scrum.';
       } else if (!includesTeamSprint) {
         this.errorMessage = 'Regel 7: Der Benutzername muss das Wort "TeamSprint" enthalten.';
-      } else {
+      } else if (this.allNicknames.includes(trimmedUsername)) {
+        this.errorMessage = 'Dieser Benutzername ist bereits vorhanden.';}
+      else {
         this.errorMessage = '';
         this.userCreated.emit(trimmedUsername + '\n');
         this.createdUsernames.push(trimmedUsername);
@@ -90,10 +93,6 @@ export class ChatUserComponent {
       }
   }
   
-
-
-  // else if (this.createdUsernames.includes(trimmedUsername)) {
-  // this.errorMessage = 'Dieser Benutzername ist bereits vorhanden.';
 
   public resetWarning(): void {
     this.errorMessage = '';
