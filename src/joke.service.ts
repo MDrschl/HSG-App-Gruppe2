@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class JokeService {
-  private readonly apiUrl = 'https://v2.jokeapi.dev/joke/Any?type=single';
+  private readonly apiUrl = 'https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single';
 
   constructor(private http: HttpClient) {}
 
