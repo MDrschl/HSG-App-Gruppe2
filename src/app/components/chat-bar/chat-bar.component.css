@@ -10,10 +10,11 @@
   }
   
   #chat-textarea {
+    padding-top: 12px;
     border-radius: 15px;
-    line-height: 2.3;
+    min-height: 50px;    
     resize: none;
-    width: 100%; /* Take up the available width */
+    width: 100%;  
   }
   
   .btn-primary {
@@ -24,18 +25,46 @@
     border: none !important;
     transition: 0.5s ease-in-out;
   }
-  
-  #btn-send-img {
+  #btn-joke{
+    margin-right: 1.5vw;
+  }
+
+  #btn-send-img,
+  #btn-joke-img {
     height: 100%;
     transition: 0.2s ease;
   }
   
-  #btn-send-img:hover {
+  #btn-send-img:hover,
+  #btn-joke-img:hover {
     transform: scale(1.05);
     transition: 0.3s ease;
   }
   
   .alert {
     margin-top: 1vh;
+    background-color: #293033;
+    color: white;
+    border-color: unset;
+    border-radius: 15px;
   }
   
+
+
+/*scrollbar*/
+textarea::-webkit-scrollbar {
+  width: 8px;
+  padding-right: 20px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #293033;
+  border-radius: 6px; 
+  transition: 0.2s;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: #00A6FB;
+  transition: 0.2s;
+}
+

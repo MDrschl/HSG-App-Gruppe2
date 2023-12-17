@@ -1,12 +1,15 @@
 footer{
     height: 10vh;
     min-height: 45px;
-    background-color: #00802f; /*#00a6fb*/ 
+    background-color: #00A6FB;
     padding-left: 7.5vw;
+    padding-right: 7.5vw;
     color: white;
     display: flex;
     align-items: center;
     top: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
 footer a{
@@ -19,6 +22,10 @@ footer a{
     margin-left: 5vw;
 }
 
+#hsg-logo{
+    max-width: 30vw;
+}
+
 @media only screen and (max-width: 650px) {
     .footer-wrapper{
         display: flex;
@@ -29,7 +36,7 @@ footer a{
     footer{
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         padding: 0;
     }
 

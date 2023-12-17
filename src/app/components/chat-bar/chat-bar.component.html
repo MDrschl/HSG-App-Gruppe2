@@ -1,6 +1,10 @@
 <!-- chat-history.component.html -->
 <div class="chat-input">
     <div id="div-btn-send" class="d-flex align-items-center">
+      <button (click)="sendRandomJoke()" class="btn-primary border ml-2" id="btn-joke">
+        <!-- Get a Joke -->
+        <img id="btn-joke-img" src="../../../assets/Images/joke-btn.svg">
+      </button>
       <textarea class="form-control border" id="chat-textarea"
         rows="1" 
         [(ngModel)]="chatMessage" 
@@ -12,10 +16,6 @@
         class="btn-primary border ml-2" 
         id="btn-send">
         <img class="icon" id="btn-send-img" src="../../../assets/Images/send-btn.svg">
-      </button>
-     
-      <button (click)="sendRandomJoke()" class="btn-primary border ml-2">
-        Get a Joke
       </button>
     </div>
     <div *ngIf="errorMessage" class="alert alert-warning ml-2 mt-2">{{ errorMessage }}</div>
